@@ -36,7 +36,7 @@ export default function Home() {
         </a>
         <nav aria-label="Primary navigation">
           <a href="#approach">The approach</a>
-          <a href="#about">Meet John</a>
+          <a href="#about">Meet John Paul</a>
           <a className="nav-cta" href="#share">Share an idea</a>
         </nav>
       </header>
@@ -77,7 +77,7 @@ export default function Home() {
       </section>
 
       <section className="about" id="about">
-        <div className="section-kicker">Meet John</div>
+        <div className="section-kicker">Meet John Paul</div>
         <div className="about-grid">
           <h2>A neighbor who believes city hall can be more human.</h2>
           <div className="body-copy">
@@ -85,7 +85,7 @@ export default function Home() {
               John Paul Wolforth is a longtime 43rd Ward neighbor, civic volunteer, and design strategist who has spent his career helping organizations untangle complicated problems. He and his family have built their life here—walking to school, supporting local shops, and learning from the neighbors who make every block distinct.
             </p>
             <p>
-              John is running for alderman to bring a practical, collaborative approach to ward government: responsive constituent service, transparent decisions, and solutions shaped with the people who use them.
+              John Paul is running for alderman to bring a practical, collaborative approach to ward government: responsive constituent service, transparent decisions, and solutions shaped with the people who use them.
             </p>
             <a className="text-link" href="https://calendly.com/" target="_blank" rel="noreferrer">
               Schedule a 15-minute conversation <span aria-hidden="true">↗</span>
