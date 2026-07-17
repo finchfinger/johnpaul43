@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #111111;
+  --paper: #f7f4ed;
+  --blue: #66c9ef;
+  --blue-dark: #083f5a;
+  --red: #ec1745;
+  --line: rgba(17, 17, 17, 0.2);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: Arial, Helvetica, sans-serif; }
+a { color: inherit; }
+
+.site-header {
+  position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between;
+  min-height: 84px; padding: 14px clamp(22px, 5vw, 74px); background: rgba(247, 244, 237, 0.94);
+  border-bottom: 1px solid var(--ink); backdrop-filter: blur(12px);
+}
+.wordmark { display: grid; text-decoration: none; font-weight: 900; letter-spacing: -0.05em; font-size: 26px; line-height: 0.9; }
+.wordmark small { color: var(--red); font-size: 0.55em; vertical-align: top; }
+.stars { color: var(--red); font-size: 12px; letter-spacing: 0.25em; margin-bottom: 8px; }
+nav { display: flex; align-items: center; gap: clamp(18px, 3vw, 44px); }
+nav a { text-decoration: none; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; }
+.nav-cta { background: var(--red); color: white; padding: 14px 18px; }
+
+.hero { min-height: calc(100svh - 84px); display: grid; grid-template-columns: minmax(0, 1fr) 280px; align-items: end; gap: 40px; padding: clamp(70px, 10vw, 145px) clamp(22px, 7vw, 110px) clamp(48px, 7vw, 92px); border-bottom: 1px solid var(--ink); position: relative; overflow: hidden; }
+.hero::before { content: "43"; position: absolute; right: -0.04em; top: 44%; transform: translateY(-50%); color: rgba(102, 201, 239, 0.21); font-size: clamp(330px, 47vw, 740px); line-height: 0.7; font-weight: 900; letter-spacing: -0.14em; pointer-events: none; }
+.hero-copy, .hero-note { position: relative; }
+.eyebrow, .section-kicker { font-size: 12px; line-height: 1; font-weight: 900; letter-spacing: 0.16em; text-transform: uppercase; }
+.eyebrow { margin: 0 0 24px; }
+h1 { max-width: 900px; margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(62px, 9.4vw, 150px); line-height: 0.86; letter-spacing: -0.065em; font-weight: 400; }
+h1 em { color: var(--red); font-weight: 400; }
+.dek { max-width: 690px; margin: 36px 0; font-size: clamp(18px, 2vw, 25px); line-height: 1.45; }
+.button { display: inline-flex; justify-content: space-between; align-items: center; min-width: 230px; padding: 18px 20px; text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em; font-size: 13px; font-weight: 900; }
+.button-red { background: var(--red); color: white; }
+.hero-note { border-top: 1px solid var(--ink); padding-top: 14px; align-self: end; }
+.note-number { color: var(--red); font-size: 12px; font-weight: 900; }
+.hero-note p { font-family: Georgia, "Times New Roman", serif; font-size: 22px; line-height: 1.25; }
+
+.approach, .about, .questions { padding: clamp(70px, 9vw, 140px) clamp(22px, 7vw, 110px); }
+.approach { background: var(--blue); }
+.section-kicker { margin-bottom: 42px; }
+.approach-grid, .about-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(48px, 9vw, 150px); }
+h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(44px, 6.1vw, 88px); line-height: 0.98; letter-spacing: -0.05em; font-weight: 400; }
+.body-copy { max-width: 620px; }
+.body-copy p { margin: 0 0 24px; font-size: 18px; line-height: 1.6; }
+.principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 90px; border: 1px solid var(--ink); background: var(--ink); }
+.principles > div { min-height: 255px; background: var(--blue); padding: 24px; }
+.principles b { font-size: 12px; }
+.principles h3 { margin: 65px 0 12px; font-family: Georgia, "Times New Roman", serif; font-size: 38px; font-weight: 400; }
+.principles p { max-width: 250px; line-height: 1.5; }
+
+.about { border-bottom: 1px solid var(--ink); }
+.about h2 { max-width: 720px; }
+.text-link { display: inline-block; margin-top: 12px; padding-bottom: 6px; border-bottom: 2px solid var(--red); text-decoration: none; color: var(--red); font-weight: 900; }
+
+.questions { background: var(--paper); }
+.questions h2 { margin-bottom: 52px; color: var(--red); }
+.question-list { border-top: 1px solid var(--ink); }
+.question { display: grid; grid-template-columns: 70px 1fr; gap: 20px; align-items: center; border-bottom: 1px solid var(--ink); padding: 25px 0; }
+.question span { font-size: 12px; font-weight: 900; color: var(--red); }
+.question p { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(26px, 3vw, 44px); line-height: 1.15; }
+
+.share { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(50px, 10vw, 160px); background: var(--blue-dark); color: white; padding: clamp(70px, 9vw, 140px) clamp(22px, 7vw, 110px); }
+.section-kicker.light { color: var(--blue); }
+.share-intro p { max-width: 540px; font-size: 19px; line-height: 1.55; }
+form { border-top: 1px solid rgba(255,255,255,0.5); padding-top: 26px; }
+label { display: block; margin-bottom: 12px; font-size: 12px; text-transform: uppercase; font-weight: 900; letter-spacing: 0.12em; }
+textarea, input { width: 100%; border: 0; border-bottom: 1px solid rgba(255,255,255,0.55); border-radius: 0; background: transparent; color: white; outline: none; }
+textarea::placeholder, input::placeholder { color: rgba(255,255,255,0.5); }
+textarea { min-height: 170px; resize: vertical; font-family: Georgia, "Times New Roman", serif; font-size: clamp(30px, 4vw, 54px); line-height: 1.12; }
+input { height: 54px; font-size: 17px; }
+.form-row { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; margin-top: 32px; }
+.submit-button { height: 54px; padding: 0 22px; border: 0; background: var(--red); color: white; font: inherit; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; cursor: pointer; }
+.fine-print { color: rgba(255,255,255,0.55); font-size: 11px; line-height: 1.45; }
+.thanks { border-top: 1px solid rgba(255,255,255,0.5); padding-top: 36px; }
+.thanks > span { color: var(--red); font-size: 32px; }
+.thanks h3 { margin: 30px 0 10px; font-family: Georgia, "Times New Roman", serif; font-size: 54px; font-weight: 400; }
+.thanks p { font-size: 18px; line-height: 1.5; }
+.thanks button { margin-top: 20px; border: 0; border-bottom: 1px solid white; padding: 4px 0; background: transparent; color: white; font-weight: 800; cursor: pointer; }
+
+footer { display: grid; grid-template-columns: 1fr auto auto; gap: 40px; align-items: end; padding: 52px clamp(22px, 5vw, 74px); background: var(--ink); color: white; font-size: 12px; }
+.footer-mark { display: grid; width: max-content; }
+.footer-mark span { color: var(--red); letter-spacing: 0.25em; }
+.footer-mark strong { margin-top: 8px; font-size: 24px; letter-spacing: -0.04em; }
+.footer-mark small { font-size: 9px; letter-spacing: 0.14em; }
+
+a, button { transition: opacity 160ms ease, transform 160ms ease; }
+a:hover, button:hover { opacity: 0.76; }
+.button:hover, .nav-cta:hover, .submit-button:hover { opacity: 1; transform: translateY(-2px); }
+a:focus-visible, button:focus-visible, textarea:focus-visible, input:focus-visible { outline: 3px solid white; outline-offset: 3px; }
+.approach a:focus-visible, .about a:focus-visible, header a:focus-visible { outline-color: var(--red); }
+
+@media (max-width: 850px) {
+  .site-header { min-height: 72px; }
+  nav a:not(.nav-cta) { display: none; }
+  .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 92px; }
+  .hero-note { max-width: 260px; margin-top: 25px; }
+  .approach-grid, .about-grid, .share { grid-template-columns: 1fr; }
+  .principles { grid-template-columns: 1fr; }
+  .principles > div { min-height: 210px; }
+  .principles h3 { margin-top: 40px; }
+  footer { grid-template-columns: 1fr; gap: 22px; align-items: start; }
+}
+
+@media (max-width: 540px) {
+  .wordmark { font-size: 20px; }
+  .nav-cta { padding: 11px 12px; font-size: 10px; }
+  .hero::before { font-size: 340px; top: 30%; }
+  .form-row { grid-template-columns: 1fr; }
+  .submit-button { width: 100%; }
+  .question { grid-template-columns: 38px 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
