@@ -21,7 +21,8 @@ a { color: inherit; }
 }
 .wordmark { display: grid; text-decoration: none; font-weight: 900; letter-spacing: -0.05em; font-size: 26px; line-height: 0.9; }
 .wordmark small { color: var(--red); font-size: 0.55em; vertical-align: top; }
-.stars { color: var(--red); font-size: 12px; letter-spacing: 0.25em; margin-bottom: 8px; }
+.star-row { display: flex; align-items: center; gap: 7px; margin-bottom: 8px; }
+.star-row img { display: block; width: 12px; height: auto; }
 nav { display: flex; align-items: center; gap: clamp(18px, 3vw, 44px); }
 nav a { text-decoration: none; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; }
 .nav-cta { background: var(--red); color: white; padding: 14px 18px; }
@@ -77,14 +78,16 @@ input { height: 54px; font-size: 17px; }
 .submit-button { height: 54px; padding: 0 22px; border: 0; background: var(--red); color: white; font: inherit; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; cursor: pointer; }
 .fine-print { color: rgba(255,255,255,0.55); font-size: 11px; line-height: 1.45; }
 .thanks { border-top: 1px solid rgba(255,255,255,0.5); padding-top: 36px; }
-.thanks > span { color: var(--red); font-size: 32px; }
+.thanks > .star-row { margin-bottom: 0; }
+.thanks > .star-row img { width: 28px; }
 .thanks h3 { margin: 30px 0 10px; font-family: Georgia, "Times New Roman", serif; font-size: 54px; font-weight: 400; }
 .thanks p { font-size: 18px; line-height: 1.5; }
 .thanks button { margin-top: 20px; border: 0; border-bottom: 1px solid white; padding: 4px 0; background: transparent; color: white; font-weight: 800; cursor: pointer; }
 
 footer { display: grid; grid-template-columns: 1fr auto auto; gap: 40px; align-items: end; padding: 52px clamp(22px, 5vw, 74px); background: var(--ink); color: white; font-size: 12px; }
 .footer-mark { display: grid; width: max-content; }
-.footer-mark span { color: var(--red); letter-spacing: 0.25em; }
+.footer-mark .star-row { gap: 8px; }
+.footer-mark .star-row img { width: 13px; }
 .footer-mark strong { margin-top: 8px; font-size: 24px; letter-spacing: -0.04em; }
 .footer-mark small { font-size: 9px; letter-spacing: 0.14em; }
 

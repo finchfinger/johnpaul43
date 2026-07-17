@@ -9,6 +9,16 @@ const questions = [
   "How might we design streets that work for neighbors of every age?",
 ];
 
+function StarRow({ count = 4 }: { count?: number }) {
+  return (
+    <span className="star-row" aria-hidden="true">
+      {Array.from({ length: count }, (_, index) => (
+        <img src="/chistar.svg" alt="" key={index} />
+      ))}
+    </span>
+  );
+}
+
 export default function Home() {
   const [submitted, setSubmitted] = useState(false);
 
@@ -21,7 +31,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="John Paul Wolforth for 43rd Ward Alderman, home">
-          <span className="stars" aria-hidden="true">✦ ✦ ✦ ✦</span>
+          <StarRow />
           <span>WOLFORTH <small>43</small></span>
         </a>
         <nav aria-label="Primary navigation">
@@ -104,7 +114,7 @@ export default function Home() {
         </div>
         {submitted ? (
           <div className="thanks" role="status">
-            <span aria-hidden="true">✦</span>
+            <StarRow count={1} />
             <h3>Idea received.</h3>
             <p>Thanks for helping design what comes next. We’ll keep you in the loop.</p>
             <button type="button" onClick={() => setSubmitted(false)}>Add another idea</button>
@@ -126,7 +136,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <div className="footer-mark"><span aria-hidden="true">✦ ✦ ✦ ✦</span><strong>WOLFORTH</strong><small>43RD WARD ALDERMAN</small></div>
+        <div className="footer-mark"><StarRow /><strong>WOLFORTH</strong><small>43RD WARD ALDERMAN</small></div>
         <p>Paid for by Friends of John Paul Wolforth</p>
         <a href="mailto:hello@wolforth43.com">hello@wolforth43.com</a>
       </footer>
