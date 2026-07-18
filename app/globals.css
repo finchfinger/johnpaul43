@@ -2,12 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Google+Sans+Flex:opsz,wght@6..144,400;6..144,700;6..144,900&display=swap");
 
 :root {
-  --ink: #111111;
-  --paper: #f7f4ed;
-  --blue: #66c9ef;
-  --blue-dark: #083f5a;
-  --red: #ec1745;
-  --line: rgba(17, 17, 17, 0.2);
+  --ink: #000000;
+  --paper: #ffffff;
+  --blue: #41b6e6;
+  --red: #e4002b;
   --font-sans: "Google Sans Flex", "Google Sans", Arial, Helvetica, sans-serif;
   --font-serif: "Cormorant Garamond", Garamond, Georgia, serif;
 }
@@ -19,10 +17,10 @@ a { color: inherit; }
 
 .site-header {
   position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between;
-  min-height: 84px; padding: 14px clamp(22px, 5vw, 74px); background: rgba(247, 244, 237, 0.94);
+  min-height: 84px; padding: 14px clamp(22px, 5vw, 74px); background: var(--paper);
   border-bottom: 1px solid var(--ink); backdrop-filter: blur(12px);
 }
-.wordmark { display: grid; text-decoration: none; font-weight: 900; letter-spacing: -0.05em; font-size: 26px; line-height: 0.9; }
+.wordmark { display: grid; text-decoration: none; font-weight: 900; letter-spacing: 0; font-size: 26px; line-height: 0.95; }
 .wordmark small { color: var(--red); font-size: 0.55em; vertical-align: top; }
 .star-row { display: flex; align-items: center; gap: 7px; margin-bottom: 8px; }
 .star-row img { display: block; width: 12px; height: auto; }
@@ -34,7 +32,7 @@ nav a { text-decoration: none; font-size: 13px; font-weight: 800; text-transform
 .hero-copy { width: min(100%, 1120px); }
 .eyebrow, .section-kicker { font-size: 12px; line-height: 1; font-weight: 900; letter-spacing: 0.16em; text-transform: uppercase; }
 .eyebrow { margin: 0 0 24px; }
-h1 { max-width: 1000px; margin: 0 auto; font-family: var(--font-serif); font-size: clamp(62px, 9.4vw, 150px); line-height: 0.86; letter-spacing: -0.055em; font-weight: 500; }
+h1 { max-width: 1000px; margin: 0 auto; font-family: var(--font-serif); font-size: clamp(62px, 9.4vw, 150px); line-height: 0.94; letter-spacing: 0; font-weight: 500; }
 h1 em { color: var(--red); font-weight: 400; }
 .dek { max-width: 720px; margin: 36px auto; font-size: clamp(18px, 2vw, 25px); line-height: 1.45; }
 .button { display: inline-flex; justify-content: space-between; align-items: center; min-width: 230px; padding: 18px 20px; text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em; font-size: 13px; font-weight: 900; }
@@ -47,7 +45,7 @@ h1 em { color: var(--red); font-weight: 400; }
 .approach { background: var(--blue); }
 .section-kicker { margin-bottom: 42px; }
 .approach-grid, .about-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(48px, 9vw, 150px); }
-h2 { margin: 0; font-family: var(--font-serif); font-size: clamp(44px, 6.1vw, 88px); line-height: 0.94; letter-spacing: -0.045em; font-weight: 500; }
+h2 { margin: 0; font-family: var(--font-serif); font-size: clamp(44px, 6.1vw, 88px); line-height: 1; letter-spacing: 0; font-weight: 500; }
 .body-copy { max-width: 620px; }
 .body-copy p { margin: 0 0 24px; font-size: 18px; line-height: 1.6; }
 .principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 90px; border: 1px solid var(--ink); background: var(--ink); }
@@ -67,7 +65,7 @@ h2 { margin: 0; font-family: var(--font-serif); font-size: clamp(44px, 6.1vw, 88
 .question span { font-size: 12px; font-weight: 900; color: var(--red); }
 .question p { margin: 0; font-family: var(--font-serif); font-size: clamp(28px, 3.2vw, 48px); line-height: 1.08; font-weight: 500; }
 
-.share { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(50px, 10vw, 160px); background: var(--blue-dark); color: white; padding: clamp(70px, 9vw, 140px) clamp(22px, 7vw, 110px); }
+.share { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(50px, 10vw, 160px); background: var(--ink); color: white; padding: clamp(70px, 9vw, 140px) clamp(22px, 7vw, 110px); }
 .section-kicker.light { color: var(--blue); }
 .share-intro p { max-width: 540px; font-size: 19px; line-height: 1.55; }
 form { border-top: 1px solid rgba(255,255,255,0.5); padding-top: 26px; }
@@ -90,7 +88,7 @@ footer { display: grid; grid-template-columns: 1fr auto auto; gap: 40px; align-i
 .footer-mark { display: grid; width: max-content; }
 .footer-mark .star-row { gap: 8px; }
 .footer-mark .star-row img { width: 13px; }
-.footer-mark strong { margin-top: 8px; font-size: 24px; letter-spacing: -0.04em; }
+.footer-mark strong { margin-top: 8px; font-size: 24px; letter-spacing: 0; }
 .footer-mark small { font-size: 9px; letter-spacing: 0.14em; }
 
 a, button { transition: opacity 160ms ease, transform 160ms ease; }
