@@ -117,6 +117,8 @@ a:focus-visible, button:focus-visible, textarea:focus-visible, input:focus-visib
   .submit-button { width: 100%; }
   .question { grid-template-columns: 24px 1fr; gap: 14px; min-height: 0; padding: 24px 0; }
   .question img { width: 18px; }
+  .questions h2 { font-size: 34px; }
+  .question p { font-size: 23px; line-height: 1.2; letter-spacing: -0.01em; text-wrap: balance; }
 }
 
 @media (prefers-reduced-motion: reduce) {
