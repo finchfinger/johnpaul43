@@ -52,27 +52,27 @@ export default function Home() {
         </div>
         <div className="hero-note" aria-label="Campaign principle">
           <span className="note-number">01</span>
-          <p>Listen closely.<br />Prototype openly.<br />Fix what matters.</p>
+          <p>Listen to people.<br />Test what works.<br />Deliver together.</p>
         </div>
       </section>
 
       <section className="approach" id="approach">
-        <div className="section-kicker">A design-led campaign</div>
+        <div className="section-kicker">A people-led campaign</div>
         <div className="approach-grid">
-          <h2>Good government should feel less like a maze—and more like a service.</h2>
+          <h2>The people closest to a problem should help shape the solution.</h2>
           <div className="body-copy">
             <p>
-              Design is not decoration. It’s a way to understand a problem before rushing to solve it. Our campaign will bring neighbors, city workers, small businesses, and local organizations into the same room to map what is broken, test practical fixes, and measure what actually improves daily life.
+              People lead; design thinking gives us a practical way to act. We’ll begin with empathy—listening to residents, city workers, small businesses, and local organizations—then define the real need before jumping to an answer. Together, we’ll turn those priorities into small prototypes, test them in the real world, and learn in public.
             </p>
             <p>
-              We’ll publish what we learn, make decisions in the open, and keep refining. Because the best ideas for the 43rd Ward already live here.
+              Every proposal should pass three tests: Is it desirable to the people it serves? Is it feasible for the ward and city to deliver? Is it viable—financially, politically, and over time? That is how good ideas become durable public solutions.
             </p>
           </div>
         </div>
         <div className="principles" aria-label="Campaign method">
-          <div><b>01</b><h3>Listen</h3><p>Start with lived experience, not assumptions.</p></div>
-          <div><b>02</b><h3>Make</h3><p>Turn shared ideas into small, testable solutions.</p></div>
-          <div><b>03</b><h3>Learn</h3><p>Measure the result and improve what we build.</p></div>
+          <div><b>01</b><h3>Desirable</h3><p>Does this solve a problem neighbors actually feel?</p></div>
+          <div><b>02</b><h3>Feasible</h3><p>Can the ward, city, and community partners deliver it?</p></div>
+          <div><b>03</b><h3>Viable</h3><p>Can it earn support, fit the budget, and last?</p></div>
         </div>
       </section>
 
