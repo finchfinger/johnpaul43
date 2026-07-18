@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Google+Sans+Flex:opsz,wght@6..144,400;6..144,700;6..144,900&display=swap");
+@import "tailwindcss";
 
 :root {
   --ink: #000000;
