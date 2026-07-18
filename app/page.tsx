@@ -102,8 +102,8 @@ export default function Home() {
           </div>
           <h1>Let’s design a ward that works for everyone.</h1>
           <p className="dek">
-            People know what their neighborhoods need.<br />
-            Let’s build the answers together.
+            <span>People know what their neighborhoods need.</span>
+            <span>Let’s build the answers together.</span>
           </p>
           <button className="button button-red" type="button" onClick={openJoinModal}>Join the movement</button>
         </div>
