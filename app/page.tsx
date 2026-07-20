@@ -32,10 +32,12 @@ function StarRow({ count = 4 }: { count?: number }) {
 
 export default function Home() {
   const [submitted, setSubmitted] = useState(false);
+  const [ideaStatus, setIdeaStatus] = useState<"idle" | "submitting" | "error">("idle");
   const [showHeader, setShowHeader] = useState(false);
   const [promptIndex, setPromptIndex] = useState(0);
   const [joinOpen, setJoinOpen] = useState(false);
   const [joined, setJoined] = useState(false);
+  const [joinStatus, setJoinStatus] = useState<"idle" | "submitting" | "error">("idle");
 
   useEffect(() => {
     const updateHeader = () => setShowHeader(window.scrollY > 24);
@@ -66,19 +68,59 @@ export default function Home() {
     return () => window.clearInterval(promptTimer);
   }, []);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSubmitted(true);
+    setIdeaStatus("submitting");
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    try {
+      const response = await fetch("/api/ideas", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          idea: data.get("idea"),
+          email: data.get("email"),
+          website: data.get("website"),
+        }),
+      });
+      if (!response.ok) throw new Error("Submission failed");
+      form.reset();
+      setSubmitted(true);
+      setIdeaStatus("idle");
+    } catch {
+      setIdeaStatus("error");
+    }
   }
 
   function openJoinModal() {
     setJoined(false);
+    setJoinStatus("idle");
     setJoinOpen(true);
   }
 
-  function handleJoinSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleJoinSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setJoined(true);
+    setJoinStatus("submitting");
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    try {
+      const response = await fetch("/api/join", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.get("name"),
+          email: data.get("email"),
+          phone: data.get("phone"),
+          website: data.get("website"),
+        }),
+      });
+      if (!response.ok) throw new Error("Submission failed");
+      form.reset();
+      setJoined(true);
+      setJoinStatus("idle");
+    } catch {
+      setJoinStatus("error");
+    }
   }
 
   return (
@@ -170,6 +212,10 @@ export default function Home() {
           </div>
         ) : (
           <form onSubmit={handleSubmit}>
+            <div className="honeypot" aria-hidden="true">
+              <label htmlFor="idea-website">Website</label>
+              <input id="idea-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+            </div>
             <label htmlFor="idea">How might we…</label>
             <textarea id="idea" name="idea" placeholder={ideaPrompts[promptIndex]} required />
             <div className="form-row">
@@ -177,8 +223,9 @@ export default function Home() {
                 <label htmlFor="email">Your email</label>
                 <input id="email" name="email" type="email" placeholder="you@example.com" required />
               </div>
-              <button className="submit-button" type="submit">Send my idea</button>
+              <button className="submit-button" type="submit" disabled={ideaStatus === "submitting"}>{ideaStatus === "submitting" ? "Sending…" : "Send my idea"}</button>
             </div>
+            {ideaStatus === "error" && <p className="form-error" role="alert">We could not save your idea. Please try again.</p>}
             <p className="fine-print">By submitting, you agree to receive occasional campaign updates. Unsubscribe anytime.</p>
           </form>
         )}
@@ -203,6 +250,10 @@ export default function Home() {
               </div>
             ) : (
               <form className="join-form" onSubmit={handleJoinSubmit}>
+                <div className="honeypot" aria-hidden="true">
+                  <label htmlFor="join-website">Website</label>
+                  <input id="join-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+                </div>
                 <div>
                   <label htmlFor="join-name">Your name</label>
                   <input id="join-name" name="name" type="text" autoComplete="name" placeholder="First and last name" autoFocus required />
@@ -215,7 +266,8 @@ export default function Home() {
                   <label htmlFor="join-phone">Your phone</label>
                   <input id="join-phone" name="phone" type="tel" autoComplete="tel" placeholder="(312) 555-0123" required />
                 </div>
-                <button className="join-submit" type="submit">Join the movement</button>
+                <button className="join-submit" type="submit" disabled={joinStatus === "submitting"}>{joinStatus === "submitting" ? "Joining…" : "Join the movement"}</button>
+                {joinStatus === "error" && <p className="form-error" role="alert">We could not save your information. Please try again.</p>}
                 <p className="join-fine-print">By joining, you agree to receive campaign updates by email and text. Message and data rates may apply. You can unsubscribe at any time.</p>
               </form>
             )}

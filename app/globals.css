@@ -71,6 +71,9 @@ input { height: 58px; padding: 0 16px; font-size: 17px; }
 .form-row { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; margin-top: 32px; }
 .submit-button { height: 54px; padding: 0 22px; border: 0; background: var(--red); color: white; font: inherit; font-size: 15px; font-weight: 700; letter-spacing: 0; cursor: pointer; }
 .fine-print { color: rgba(0,0,0,0.58); font-size: 11px; line-height: 1.45; }
+.honeypot { position: absolute !important; left: -10000px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; }
+.form-error { margin: 12px 0 0; color: #b00020; font-size: 14px; line-height: 1.4; font-weight: 700; }
+button:disabled { cursor: wait; opacity: 0.64; transform: none !important; }
 .thanks { padding-top: 8px; }
 .thanks > .star-row { margin-bottom: 0; }
 .thanks > .star-row img { width: 28px; }
